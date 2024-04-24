@@ -1,0 +1,19 @@
+{
+    "name": "Ikea Bargain Finder",
+    "version": "1.0.0",
+    "description": "Get the prices for ikea articles in selected countries",
+    "manifest_version": 3,
+    "author": "Christian Veit",
+    "action": {},
+    "background": {
+        "service_worker": "service-worker.js"
+      },
+    "content_scripts":[
+      {
+        "matches": ["https://*.ikea.com/*/*/p/*"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+      }
+    ],
+    "permissions": ["scripting", "activeTab"]
+}
